@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our complete collection of premium products at Luxe by Icce. Contact us on WhatsApp for pricing and availability.">
+    <title>Shop Products - Luxe by Icce</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" id="announcementBar">
+        <p>Welcome to Luxe by Icce - Your destination for elegance and style</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">LUXE BY ICCE</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogue.html" class="active">Shop Products</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Catalogue Header -->
+    <section class="catalogue-header">
+        <div class="container">
+            <h1>Shop Products</h1>
+            <p>Discover our carefully selected collection</p>
+        </div>
+    </section>
+
+    <!-- Search and Filters -->
+    <section class="catalogue-filters">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search products..." aria-label="Search products">
+                    <button class="search-btn" aria-label="Search">🔍</button>
+                </div>
+                <div class="filter-group">
+                    <select id="sortFilter" aria-label="Sort products">
+                        <option value="id-asc">ID (Low to High)</option>
+                        <option value="id-desc">ID (High to Low)</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="catalogue-products">
+        <div class="container">
+            <div class="products-grid" id="catalogueGrid">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+            <div class="loading-state" id="loadingState" style="display: none;">
+                <p>Loading products...</p>
+            </div>
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <p>No products found matching your criteria.</p>
+                <button class="btn btn-secondary" id="clearFilters">Clear Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal" aria-hidden="true">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">×</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Luxe by Icce</h3>
+                    <p>Your destination for elegance, style, and quality.</p>
+                    <p class="footer-contact">
+                        <strong>WhatsApp:</strong> 024 755 9387<br>
+                        <strong>International:</strong> +233 247 559 387
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalogue.html">Shop Products</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="index.html#delivery">Delivery Information</a></li>
+                        <li><a href="index.html#faq">FAQs</a></li>
+                        <li><a href="https://wa.me/233247559387" target="_blank">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Luxe by Icce. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/main-new.js"></script>
+</body>
+</html>

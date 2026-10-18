@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Dashboard for Luxe by Icce">
+    <title>Admin Dashboard - Luxe by Icce</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- Login Section -->
+    <div id="loginSection" class="login-section">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Luxe by Icce</h1>
+                <p>Admin Dashboard</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username or Email</label>
+                    <input type="text" id="username" name="username" required placeholder="admin@luxebyicce.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" id="loginBtn">
+                    Login
+                </button>
+                <div id="loginError" class="error-message" style="display: none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboardSection" class="dashboard-section" style="display: none;">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Luxe by Icce</h2>
+                <p>Admin Panel</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-link active" data-tab="dashboard">
+                    <span>📊</span> Dashboard
+                </a>
+                <a href="#" class="nav-link" data-tab="orders">
+                    <span>📦</span> Orders
+                </a>
+                <a href="#" class="nav-link" data-tab="products">
+                    <span>👜</span> Products
+                </a>
+                <a href="#" class="nav-link" data-tab="categories">
+                    <span>📁</span> Categories
+                </a>
+                <a href="#" class="nav-link" data-tab="settings">
+                    <span>⚙️</span> Settings
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn btn-secondary btn-full">
+                    Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <h1 id="pageTitle">Dashboard</h1>
+                <div class="header-actions">
+                    <span id="adminName" class="admin-name"></span>
+                </div>
+            </header>
+
+            <!-- Dashboard Tab -->
+            <div id="dashboardTab" class="tab-content active">
+                <div class="stats-grid" id="statsGrid">
+                    <!-- Statistics will be populated by JavaScript -->
+                </div>
+                <div class="recent-orders">
+                    <h2>Recent Orders</h2>
+                    <div id="recentOrdersList" class="orders-list">
+                        <!-- Recent orders will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Tab -->
+            <div id="ordersTab" class="tab-content">
+                <div class="orders-filters">
+                    <div class="filter-group">
+                        <input type="text" id="orderSearch" placeholder="Search orders...">
+                        <select id="orderStatusFilter">
+                            <option value="">All Statuses</option>
+                            <option value="PENDING">Pending</option>
+                            <option value="CONFIRMED">Confirmed</option>
+                            <option value="PROCESSING">Processing</option>
+                            <option value="DISPATCHED">Dispatched</option>
+                            <option value="DELIVERED">Delivered</option>
+                            <option value="CANCELLED">Cancelled</option>
+                        </select>
+                        <button id="applyOrderFilters" class="btn btn-primary">Apply</button>
+                    </div>
+                </div>
+                <div id="ordersList" class="orders-list">
+                    <!-- Orders will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Products Tab -->
+            <div id="productsTab" class="tab-content">
+                <div class="tab-actions">
+                    <button id="addProductBtn" class="btn btn-primary">Add Product</button>
+                </div>
+                <div id="productsList" class="products-list">
+                    <!-- Products will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Categories Tab -->
+            <div id="categoriesTab" class="tab-content">
+                <div class="tab-actions">
+                    <button id="addCategoryBtn" class="btn btn-primary">Add Category</button>
+                </div>
+                <div id="categoriesList" class="categories-list">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="settingsTab" class="tab-content">
+                <form id="settingsForm">
+                    <div class="form-section">
+                        <h2>Business Information</h2>
+                        <div class="form-group">
+                            <label for="businessName">Business Name</label>
+                            <input type="text" id="businessName" name="businessName">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessDescription">Business Description</label>
+                            <textarea id="businessDescription" name="businessDescription" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsappNumber">WhatsApp Number</label>
+                            <input type="text" id="whatsappNumber" name="whatsappNumber">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address" rows="2"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <h2>Announcement</h2>
+                        <div class="form-group">
+                            <label for="announcementText">Announcement Text</label>
+                            <input type="text" id="announcementText" name="announcementText">
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <h2>Store Hours</h2>
+                        <div class="form-group">
+                            <label for="businessHours">Business Hours</label>
+                            <input type="text" id="businessHours" name="businessHours">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save Settings</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Order Detail Modal -->
+    <div class="modal" id="orderModal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-body" id="orderModalBody">
+                <!-- Order details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Form Modal -->
+    <div class="modal" id="productModal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content large">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-body">
+                <h2 id="productModalTitle">Add Product</h2>
+                <form id="productForm">
+                    <div class="form-group">
+                        <label for="productName">Product Name *</label>
+                        <input type="text" id="productName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategory">Category *</label>
+                        <select id="productCategory" name="categoryId" required>
+                            <!-- Categories will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Description *</label>
+                        <textarea id="productDescription" name="description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="regularPrice">Regular Price (GH₵) *</label>
+                            <input type="number" id="regularPrice" name="regularPrice" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="salePrice">Sale Price (GH₵)</label>
+                            <input type="number" id="salePrice" name="salePrice" step="0.01">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="stockQuantity">Stock Quantity *</label>
+                            <input type="number" id="stockQuantity" name="stockQuantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sku">SKU</label>
+                            <input type="text" id="sku" name="sku">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Flags</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="isFeatured"> Featured</label>
+                            <label><input type="checkbox" name="isNewArrival"> New Arrival</label>
+                            <label><input type="checkbox" name="isBestSeller"> Best Seller</label>
+                            <label><input type="checkbox" name="isPublished"> Published</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">Image URL *</label>
+                        <input type="url" id="imageUrl" name="imageUrl" required placeholder="https://...">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save Product</button>
+                        <button type="button" class="btn btn-secondary cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Form Modal -->
+    <div class="modal" id="categoryModal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-body">
+                <h2 id="categoryModalTitle">Add Category</h2>
+                <form id="categoryForm">
+                    <div class="form-group">
+                        <label for="categoryName">Category Name *</label>
+                        <input type="text" id="categoryName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="categorySlug">Slug *</label>
+                        <input type="text" id="categorySlug" name="slug" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoryDescription">Description</label>
+                        <textarea id="categoryDescription" name="description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="displayOrder">Display Order</label>
+                        <input type="number" id="displayOrder" name="displayOrder" value="0">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save Category</button>
+                        <button type="button" class="btn btn-secondary cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

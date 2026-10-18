@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track your order at Luxe by Icce">
+    <title>Track Order - Luxe by Icce</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" id="announcementBar">
+        <p>Welcome to Luxe by Icce - Your destination for elegance and style</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">LUXE BY ICCE</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogue.html">Shop Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Tracking Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Track Your Order</h1>
+            <p>Enter your order reference and phone number to track your order</p>
+        </div>
+    </section>
+
+    <!-- Tracking Form -->
+    <section class="tracking-section">
+        <div class="container">
+            <div class="tracking-form-container">
+                <form id="trackingForm">
+                    <div class="form-group">
+                        <label for="orderReference">Order Reference *</label>
+                        <input type="text" id="orderReference" name="orderReference" required placeholder="e.g., LUX-2024-ABC123">
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">Phone Number *</label>
+                        <input type="tel" id="customerPhone" name="customerPhone" required placeholder="e.g., 024 755 9387">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="trackBtn">
+                        Track Order
+                    </button>
+                </form>
+            </div>
+
+            <!-- Tracking Result -->
+            <div class="tracking-result" id="trackingResult" style="display: none;">
+                <div class="result-header">
+                    <h2>Order Details</h2>
+                    <div class="order-ref-badge" id="displayOrderRef"></div>
+                </div>
+
+                <div class="result-section">
+                    <h3>Order Status</h3>
+                    <div class="status-display">
+                        <span class="current-status" id="currentStatus"></span>
+                        <span class="last-updated" id="lastUpdated"></span>
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <h3>Status Timeline</h3>
+                    <div class="status-timeline" id="statusTimeline">
+                        <!-- Timeline will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <h3>Order Items</h3>
+                    <div class="order-items-list" id="orderItems">
+                        <!-- Items will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <h3>Delivery Information</h3>
+                    <div class="delivery-info">
+                        <p><strong>Region:</strong> <span id="deliveryRegion"></span></p>
+                        <p><strong>Town:</strong> <span id="deliveryTown"></span></p>
+                        <p><strong>Method:</strong> <span id="deliveryMethod"></span></p>
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <h3>Order Total</h3>
+                    <div class="order-total">
+                        <span id="orderTotal"></span>
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <a href="https://wa.me/233247559387" target="_blank" class="btn btn-whatsapp btn-full">
+                        <span class="whatsapp-icon">📱</span>
+                        Contact Support
+                    </a>
+                    <a href="index.html" class="btn btn-secondary btn-full">
+                        Return to Home
+                    </a>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div class="tracking-error" id="trackingError" style="display: none;">
+                <div class="error-icon">⚠</div>
+                <h2>Order Not Found</h2>
+                <p>Please check your order reference and phone number and try again.</p>
+                <button class="btn btn-primary" onclick="document.getElementById('trackingError').style.display='none'">
+                    Try Again
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Luxe by Icce</h3>
+                    <p>Your destination for elegance, style, and quality.</p>
+                    <p class="footer-contact">
+                        <strong>WhatsApp:</strong> 024 755 9387<br>
+                        <strong>International:</strong> +233 247 559 387
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalogue.html">Shop Products</a></li>
+                        <li><a href="tracking.html">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="index.html#delivery">Delivery Information</a></li>
+                        <li><a href="index.html#faq">FAQs</a></li>
+                        <li><a href="https://wa.me/233247559387" target="_blank">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Luxe by Icce. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/tracking.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checkout for Luxe by Icce">
+    <title>Checkout - Luxe by Icce</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" id="announcementBar">
+        <p>Welcome to Luxe by Icce - Your destination for elegance and style</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">LUXE BY ICCE</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogue.html">Shop Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Checkout Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Checkout</h1>
+            <p>Complete your order</p>
+        </div>
+    </section>
+
+    <!-- Checkout Content -->
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-layout">
+                <!-- Checkout Form -->
+                <div class="checkout-form">
+                    <form id="checkoutForm">
+                        <div class="form-section">
+                            <h2>Contact Information</h2>
+                            <div class="form-group">
+                                <label for="customerName">Full Name *</label>
+                                <input type="text" id="customerName" name="customerName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerPhone">Phone Number *</label>
+                                <input type="tel" id="customerPhone" name="customerPhone" required placeholder="024 755 9387">
+                                <small>Enter your Ghanaian phone number</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerEmail">Email Address (Optional)</label>
+                                <input type="email" id="customerEmail" name="customerEmail" placeholder="you@example.com">
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2>Delivery Information</h2>
+                            <div class="form-group">
+                                <label for="deliveryRegion">Region *</label>
+                                <select id="deliveryRegion" name="deliveryRegion" required>
+                                    <option value="">Select Region</option>
+                                    <option value="Ashanti">Ashanti Region</option>
+                                    <option value="Greater Accra">Greater Accra</option>
+                                    <option value="Eastern">Eastern Region</option>
+                                    <option value="Western">Western Region</option>
+                                    <option value="Central">Central Region</option>
+                                    <option value="Northern">Northern Region</option>
+                                    <option value="Volta">Volta Region</option>
+                                    <option value="Upper East">Upper East Region</option>
+                                    <option value="Upper West">Upper West Region</option>
+                                    <option value="Bono">Bono Region</option>
+                                    <option value="Ahafo">Ahafo Region</option>
+                                    <option value="Oti">Oti Region</option>
+                                    <option value="North East">North East Region</option>
+                                    <option value="Savannah">Savannah Region</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="deliveryTown">Town/City *</label>
+                                <input type="text" id="deliveryTown" name="deliveryTown" required placeholder="e.g., Kumasi, Accra">
+                            </div>
+                            <div class="form-group">
+                                <label for="deliveryAddress">Delivery Address *</label>
+                                <textarea id="deliveryAddress" name="deliveryAddress" required rows="3" placeholder="Enter your full delivery address"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="deliveryInstructions">Delivery Instructions (Optional)</label>
+                                <textarea id="deliveryInstructions" name="deliveryInstructions" rows="2" placeholder="Any special instructions for delivery"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="deliveryMethod">Delivery Method *</label>
+                                <select id="deliveryMethod" name="deliveryMethod" required>
+                                    <option value="DELIVERY">Door-to-Door Delivery</option>
+                                    <option value="PICKUP">Pickup from Store</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2>Order Summary</h2>
+                            <div id="orderItems" class="order-items">
+                                <!-- Order items will be populated by JavaScript -->
+                            </div>
+                            <div class="order-summary">
+                                <div class="summary-row">
+                                    <span>Subtotal</span>
+                                    <span id="subtotal">GH₵0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Delivery Fee</span>
+                                    <span id="deliveryFee">GH₵0.00</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>Total</span>
+                                    <span id="total">GH₵0.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-full" id="submitOrder">
+                                Place Order
+                            </button>
+                            <a href="cart.html" class="btn btn-secondary btn-full">
+                                Back to Cart
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Empty Cart State -->
+                <div class="empty-cart" id="emptyCart" style="display: none;">
+                    <h2>Your cart is empty</h2>
+                    <p>Add items to your cart before checkout</p>
+                    <a href="catalogue.html" class="btn btn-primary">Browse Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Confirmation Modal -->
+    <div class="product-modal" id="confirmationModal" aria-hidden="true">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content confirmation-content">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">×</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Confirmation details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Luxe by Icce</h3>
+                    <p>Your destination for elegance, style, and quality.</p>
+                    <p class="footer-contact">
+                        <strong>WhatsApp:</strong> 024 755 9387<br>
+                        <strong>International:</strong> +233 247 559 387
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalogue.html">Shop Products</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="index.html#delivery">Delivery Information</a></li>
+                        <li><a href="index.html#faq">FAQs</a></li>
+                        <li><a href="https://wa.me/233247559387" target="_blank">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Luxe by Icce. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

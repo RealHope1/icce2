@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luxe by Icce - Your destination for elegance, style, and quality. Discover beautiful, carefully selected products in Ghana.">
+    <title>Luxe by Icce - Premium Online Shopping</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" id="announcementBar">
+        <p>Welcome to Luxe by Icce - Your destination for elegance and style</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">LUXE BY ICCE</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="catalogue.html">Shop Products</a></li>
+                <li><a href="cart.html" class="cart-link">
+                    Cart
+                    <span class="cart-count" id="cartCount" style="display: none;">0</span>
+                </a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <section class="hero-carousel" id="heroCarousel">
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Slides will be populated by JavaScript -->
+            </div>
+            <button class="carousel-nav carousel-prev" aria-label="Previous slide">‹</button>
+            <button class="carousel-nav carousel-next" aria-label="Next slide">›</button>
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+        </div>
+    </section>
+
+    <!-- Brand Introduction -->
+    <section class="brand-intro" id="about">
+        <div class="container">
+            <div class="brand-content">
+                <h1>Luxebyicce</h1>
+                <p class="tagline">Your destination for elegance, style, and quality</p>
+                <p class="description">Discover beautiful, carefully selected products, enjoy a seamless shopping experience, and order conveniently through WhatsApp. Bringing style closer to you, wherever you are in Ghana.</p>
+                <a href="catalogue.html" class="btn btn-primary">Explore Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="new-arrivals">
+        <div class="container">
+            <h2 class="section-title">New Releases</h2>
+            <p class="section-subtitle">All items available - Click to enquire on WhatsApp</p>
+            <div class="products-grid" id="newArrivalsGrid">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Editorial Gallery -->
+    <section class="editorial-gallery">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="gallery-grid" id="editorialGallery">
+                <!-- Gallery items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Service -->
+    <section class="quality-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✦</div>
+                    <h3>Premium Quality</h3>
+                    <p>Carefully selected products that meet our high standards</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✆</div>
+                    <h3>WhatsApp Ordering</h3>
+                    <p>Order conveniently through WhatsApp with personalized service</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Response</h3>
+                    <p>Quick responses to your enquiries and order requests</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📍</div>
+                    <h3>Nationwide Delivery</h3>
+                    <p>We deliver throughout Ghana with care</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp CTA -->
+    <section class="whatsapp-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Shop?</h2>
+                <p>Contact us on WhatsApp for pricing, availability, and to place your order</p>
+                <a href="https://wa.me/233247559387?text=Hello%20Luxe%20by%20Icce%2C%20I%20would%20like%20to%20enquire%20about%20your%20products" target="_blank" class="btn btn-whatsapp">
+                    <span class="whatsapp-icon">📱</span>
+                    Contact on WhatsApp
+                </a>
+                <p class="phone-display">024 755 9387</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Information -->
+    <section class="delivery-info">
+        <div class="container">
+            <h2 class="section-title">Delivery & Ordering</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>How to Order</h3>
+                    <ol>
+                        <li>Browse our product catalogue</li>
+                        <li>Select items you're interested in</li>
+                        <li>Click "Enquire on WhatsApp"</li>
+                        <li>We'll provide pricing and availability</li>
+                        <li>Confirm your order through WhatsApp</li>
+                        <li>Receive your tracking code</li>
+                    </ol>
+                </div>
+                <div class="info-item">
+                    <h3>Delivery Information</h3>
+                    <p>We deliver throughout Ghana. Delivery fees and timing depend on your location. Contact us on WhatsApp for specific delivery information for your area.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Ask our chatbot or browse common questions below</p>
+            
+            <!-- Chatbot -->
+            <div class="chatbot-container">
+                <div class="chatbot-header">
+                    <span class="chatbot-title">💬 Ask Our Assistant</span>
+                    <button class="chatbot-toggle" id="chatbotToggle">Chat</button>
+                </div>
+                <div class="chatbot-body" id="chatbotBody">
+                    <div class="chatbot-messages" id="chatbotMessages">
+                        <div class="chat-message bot">
+                            <p>Hello! I'm here to help. Ask me anything about our products, ordering, or services. For detailed enquiries, I can connect you to WhatsApp.</p>
+                        </div>
+                    </div>
+                    <div class="chatbot-input">
+                        <input type="text" id="chatbotInput" placeholder="Type your question...">
+                        <button id="chatbotSend">Send</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-list" id="faqList">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do I place an order?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Browse our product catalogue, click on any item to view details, and use the WhatsApp button to enquire about pricing and availability. Our team will guide you through the ordering process.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Why aren't prices displayed?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We believe in personalized service. Prices may vary based on availability, promotions, and special requests. Contact us on WhatsApp for the most accurate and up-to-date pricing.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do I track my order?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Once your order is confirmed, you'll receive a unique tracking code. Visit our Track Order page and enter your code to see the current status of your order.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What payment methods do you accept?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept mobile money (MTN, Vodafone, AirtelTigo), bank transfers, and cash on delivery within Accra. Payment details are provided during the ordering process.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you ship outside Ghana?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Currently, we primarily serve customers within Ghana. For international shipping requests, please contact us on WhatsApp to discuss options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Luxe by Icce</h3>
+                    <p>Your destination for elegance, style, and quality.</p>
+                    <p class="footer-contact">
+                        <strong>WhatsApp:</strong> 024 755 9387<br>
+                        <strong>International:</strong> +233 247 559 387
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalogue.html">Shop Products</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="index.html#delivery">Delivery Information</a></li>
+                        <li><a href="index.html#faq">FAQs</a></li>
+                        <li><a href="https://wa.me/233247559387" target="_blank">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Luxe by Icce. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal" aria-hidden="true">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">×</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main-new.js"></script>
+</body>
+</html>
